@@ -1,0 +1,97 @@
+/* RESET ŠTÝLOV PRE KRAJŠÍ ZÁKLAD */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GLOBÁLNE NASTAVENIA */
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #356370, #2e7d32);
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* CENTROVACÍ KONTAJNER PRE STRÁNKY */
+.center-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* KARTY / BOX ŠTÝL */
+.box {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 14px;
+    width: 420px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    animation: fadeIn 0.4s ease;
+}
+
+/* ANIMÁCIA */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* NADPISY */
+h1, h2, h3 {
+    font-weight: 600;
+    color: #222;
+}
+
+/* ODKAZY */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* TLAČIDLÁ VŠEOBECNE */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
+/* INPUTY VŠEOBECNE */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+/* OZNAMY / ALERTY */
+.alert {
+    padding: 12px;
+    background: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #c62828;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
