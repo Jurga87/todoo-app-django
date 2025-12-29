@@ -1,4 +1,4 @@
-/* POUŽÍVAJ FONT POPPINS */
+/* FONT & ZÁKLADNÉ NASTAVENIA */
 body {
     font-family: 'Poppins', sans-serif;
     background: #f4f6f8;
@@ -10,30 +10,29 @@ body {
     height: 100vh;
 }
 
-/* HLAVNÝ KONTAJNER */
+/* HLAVNÝ BOX */
 .signup-login {
-    background: #ffffff;
+    background: #fff;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     width: 400px;
 }
 
-/* NADPIS */
+/* NADPIS + ČIARA */
 .heading h2 {
     text-align: center;
     color: #333;
     margin-bottom: 10px;
 }
 
-/* ČIARA POD NADPISOM */
 .line {
     height: 2px;
     background: #4CAF50;
     margin-bottom: 20px;
 }
 
-/* POLE FORMULÁRA */
+/* FORMULÁR */
 .field {
     margin-bottom: 20px;
 }
@@ -44,7 +43,7 @@ body {
     color: #555;
 }
 
-/* VSTUPY */
+/* INPUTY */
 .inp {
     width: 100%;
     padding: 10px;
@@ -58,7 +57,7 @@ body {
     width: 100%;
     padding: 12px;
     background: #4CAF50;
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 6px;
     font-size: 16px;
@@ -70,7 +69,7 @@ body {
     background: #45a049;
 }
 
-/* LINK NA LOGIN */
+/* LINK */
 .anc {
     color: #4CAF50;
     text-decoration: none;

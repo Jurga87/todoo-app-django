@@ -1,11 +1,11 @@
-/* RESET ŠTÝLOV PRE KRAJŠÍ ZÁKLAD */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* GLOBÁLNE NASTAVENIA */
+/* GLOBAL */
 html, body {
     width: 100%;
     height: 100%;
@@ -15,7 +15,7 @@ html, body {
     color: #333;
 }
 
-/* CENTROVACÍ KONTAJNER PRE STRÁNKY */
+/* CENTER PAGE */
 .center-page {
     display: flex;
     justify-content: center;
@@ -23,9 +23,9 @@ html, body {
     height: 100vh;
 }
 
-/* KARTY / BOX ŠTÝL */
-.box {
-    background: #ffffff;
+/* BOX */
+.signup-box {
+    background: #e4e4e4;
     padding: 35px;
     border-radius: 14px;
     width: 420px;
@@ -33,21 +33,21 @@ html, body {
     animation: fadeIn 0.4s ease;
 }
 
-/* ANIMÁCIA */
+/* ANIMATION */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* NADPISY */
+/* HEADINGS */
 h1, h2, h3 {
     font-weight: 600;
     color: #222;
 }
 
-/* ODKAZY */
+/* LINKS */
 a {
-    color: #4CAF50;
+    color: #226424;
     text-decoration: none;
     transition: 0.2s;
 }
@@ -56,24 +56,31 @@ a:hover {
     text-decoration: underline;
 }
 
-/* TLAČIDLÁ VŠEOBECNE */
-.btn {
+/* FIELD SPACING */
+.field {
+    margin-top: 15px;
+}
+
+/* BUTTONS – unified */
+.btn,
+.submit-buton {
     display: inline-block;
     padding: 12px 20px;
     background: #4CAF50;
     color: white;
+    border: none;
     border-radius: 6px;
     font-size: 15px;
     cursor: pointer;
-    border: none;
     transition: 0.3s;
 }
 
-.btn:hover {
+.btn:hover,
+.submit-buton:hover {
     background: #45a049;
 }
 
-/* INPUTY VŠEOBECNE */
+/* INPUTS */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -81,12 +88,11 @@ input[type="password"] {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    margin-top: 6px;
-    margin-bottom: 16px;
+    margin: 6px 0 16px;
     font-size: 14px;
 }
 
-/* OZNAMY / ALERTY */
+/* ALERTS */
 .alert {
     padding: 12px;
     background: #ffebee;

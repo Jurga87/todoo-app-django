@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <!-- TVOJ CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- FONT POPPINS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+</head>
+
+<body>
+
+    <div class="signup-login">
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="heading">
+                <h2>Login</h2>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="field">
+                <b>Username</b>
+                <input class="inp" type="text" name="fnm" required placeholder="Enter Your Username">
+            </div>
+
+            <div class="field">
+                <b>Password</b>
+                <input class="inp" type="password" name="pwd" required placeholder="Enter Password">
+            </div>
+
+            <div class="field">
+                <input class="submit" type="submit" value="Login">
+            </div>
+
+            <div class="line"></div>
+
+            <div class="field" style="text-align:center;">
+                <b>Don't have an account?</b><br>
+                <a class="anc" href="/signup">Signup</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
