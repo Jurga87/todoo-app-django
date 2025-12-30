@@ -6,4 +6,4 @@ https://www.youtube.com/watch?v=hWhWdf2gsfQ&list=PL_SWATNcLmYmlMmEIb18iZldUEwAOO
 
 The goal of the project is to learn the basics of Django, understand its structure, and practice building a small web application.
 
-### 22 min a 37 sec 
+### 33 min a 35 sec 
