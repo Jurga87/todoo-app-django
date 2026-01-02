@@ -2,8 +2,10 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from .models import TODOO
 
-def singup(request):
+
+def signup(request):
     if request.method == "POST":
         uname = request.POST.get("uname")
         email = request.POST.get("email")
@@ -20,28 +22,53 @@ def singup(request):
             return render(request, "singup.html")
 
         # Create new user
-        my_user = User.objects.create_user(username=uname, email=email, password=pwd)
-        my_user.save()
+        User.objects.create_user(username=uname, email=email, password=pwd)
 
-        # Redirect to login page after successful signup
         return redirect("/loginn")
 
-    # Render signup page for GET request
     return render(request, "singup.html")
+
 
 def login_view(request):
     if request.method == "POST":
         uname = request.POST.get("uname")
         pwd = request.POST.get("pwd")
-        print(uname, pwd)
-        
-        # Authenticate user
+
         user = authenticate(request, username=uname, password=pwd)
 
         if user is not None:
             login(request, user)
-            return redirect("/todopage")  # Redirect to home page after successful login
+            return redirect("/todo")
         else:
             messages.error(request, "Invalid username or password.")
             return render(request, "loginn.html")
+
     return render(request, "loginn.html")
+
+
+def todo(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+
+        TODOO.objects.create(
+            title=title,
+            user=request.user
+        )
+
+        messages.success(request, f'Task "{title}" added successfully!')
+        return redirect("/todo")
+
+    # GET request → show list of todos
+    todos = TODOO.objects.filter(user=request.user).order_by('-date')
+    return render(request, "todo.html", {"todos": todos})
+
+def edit_todo(request, srno):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        obj = TODOO.objects.get(srno=srno)
+        obj.title = title
+        obj.save()
+        return redirect('/todo')
+
+    obj = TODOO.objects.get(srno=srno)
+    return render(request, 'edit_todo.html', {'obj': obj})

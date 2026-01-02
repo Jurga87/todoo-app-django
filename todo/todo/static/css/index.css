@@ -33,6 +33,56 @@ html, body {
     animation: fadeIn 0.4s ease;
 }
 
+.todo-card {
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.todo-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.todo-id {
+    background: #4CAF50;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.todo-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    margin: 0;
+}
+
+.todo-actions a {
+    margin-left: 12px;
+    font-size: 18px;
+    color: #4CAF50;
+    transition: 0.2s;
+}
+
+.todo-actions a:hover {
+    color: #2e7d32;
+}
+
 /* ANIMATION */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }

@@ -1,7 +1,7 @@
 /* FONT & ZÁKLADNÉ NASTAVENIA */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f4f6f8;
+    background: linear-gradient(135deg, #356370, #2e7d32);
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,8 +10,15 @@ body {
     height: 100vh;
 }
 
-/* HLAVNÝ BOX */
-.signup-login {
+/* HLAVNÝ OBSAH */
+.center-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* BOX S FORMULÁROM */
+.task-box {
     background: #fff;
     padding: 40px;
     border-radius: 12px;
@@ -19,33 +26,26 @@ body {
     width: 400px;
 }
 
-/* NADPIS + ČIARA */
-.heading h2 {
+/* NADPIS */
+.heading {
     text-align: center;
-    color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
-.line {
-    height: 2px;
-    background: #4CAF50;
-    margin-bottom: 20px;
+.heading h2 {
+    color: #333;
+    margin: 0;
 }
 
 /* FORMULÁR */
-.field {
-    margin-bottom: 20px;
+.task-form {
+    display: flex;
+    gap: 10px;
 }
 
-.field b {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-/* INPUTY */
+/* INPUT */
 .inp {
-    width: 100%;
+    flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -53,29 +53,18 @@ body {
 }
 
 /* TLAČIDLO */
-.submit {
-    width: 100%;
-    padding: 12px;
+.submit-buton {
+    padding: 10px 18px;
     background: #4CAF50;
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: background 0.3s ease;
+    white-space: nowrap;
 }
 
-.submit:hover {
+.submit-buton:hover {
     background: #45a049;
-}
-
-/* LINK */
-.anc {
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.anc:hover {
-    text-decoration: underline;
 }
