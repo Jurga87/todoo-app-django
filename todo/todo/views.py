@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .models import TODOO
 
 
@@ -45,7 +46,7 @@ def login_view(request):
 
     return render(request, "loginn.html")
 
-
+@login_required(login_url='/loginn')
 def todo(request):
     if request.method == "POST":
         title = request.POST.get("title")
@@ -62,6 +63,7 @@ def todo(request):
     todos = TODOO.objects.filter(user=request.user).order_by('-date')
     return render(request, "todo.html", {"todos": todos})
 
+@login_required(login_url='/loginn')
 def edit_todo(request, srno):
     if request.method == 'POST':
         title = request.POST.get('title')
@@ -72,3 +74,13 @@ def edit_todo(request, srno):
 
     obj = TODOO.objects.get(srno=srno)
     return render(request, 'edit_todo.html', {'obj': obj})
+
+@login_required(login_url='/loginn')
+def delete_todo(request, srno):
+    obj = TODOO.objects.get(srno=srno)
+    obj.delete()
+    return redirect('/todo')
+
+def logout_view(request):
+    logout(request)
+    return redirect('/loginn')

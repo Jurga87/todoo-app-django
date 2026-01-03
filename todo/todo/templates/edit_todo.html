@@ -18,7 +18,7 @@
         <div class="signup-box">
 
             <h1>ToDo list for {{ user.username }}</h1>
-            <div class="todo-actions"><a href="/logout"><i class="fa-solid fa-right-from-bracket" style="color: #4CAF50;"> Log Out</i></a></div>
+            <i class="fa-solid fa-right-from-bracket" style="color: #4CAF50;"> Log Out</i>
             <h2>Get things Done</h2>
 
             <form method="POST">
@@ -29,12 +29,13 @@
                         type="text"
                         name="title"
                         placeholder="Add Today Tasks?"
+                        value="{{ obj.title }}"
                         required
                     >
                 </div>
 
                 <button type="submit" class="submit-buton">
-                    Add Task
+                    Update Task
                 </button>
             </form>
 
@@ -47,8 +48,8 @@
                     </div>
 
                     <div class="todo-actions">
-                        <a href="/edit_todo/{{ todo.srno }}"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="/delete_todo/{{ todo.srno }}"><i class="fa-solid fa-trash"></i></a>
+                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="#"><i class="fa-solid fa-trash"></i></a>
                     </div>
 
                 </div>
